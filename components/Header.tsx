@@ -23,6 +23,7 @@ export default function Header({ socials }: Props) {
             bgColor="transparent"
             fgColor="gray"
             target="_blank"
+            rel="noreferrer"
           />
         ))}
       </motion.div>

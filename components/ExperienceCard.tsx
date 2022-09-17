@@ -27,8 +27,10 @@ export default function ExperienceCard({ experience }: Props) {
         <div className="flex space-x-2 my-2">
           {experience.technologies.map((technology) => (
             <img
+              key={technology._id}
               className="h-10 w-10 rounded-full"
               src={urlFor(technology.image).url()}
+              alt=""
             />
           ))}
         </div>
@@ -39,7 +41,7 @@ export default function ExperienceCard({ experience }: Props) {
         )}
         <ul className="list-disc space-y-4 ml-5 text-lg">
           {experience.points.map((point) => (
-            <li>{point}</li>
+            <li key={point}>{point}</li>
           ))}
         </ul>
       </div>

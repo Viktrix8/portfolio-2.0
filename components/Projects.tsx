@@ -36,7 +36,7 @@ export default function Projects({ projects }: Props) {
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
-                <a href={project.linkToBuild} target="_blank">
+                <a href={project.linkToBuild} target="_blank" rel="noreferrer">
                   {" "}
                   <span className="underline decoration-[#f7ab0a]/50">
                     {project.title}
@@ -49,6 +49,8 @@ export default function Projects({ projects }: Props) {
                   <img
                     className="h-10 w-10 rounded-full"
                     src={urlFor(technology.image).url()}
+                    alt=""
+                    key={technology._id}
                   />
                 ))}
               </div>
