@@ -15,6 +15,7 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocials } from "../utils/fetchSocials";
 import { urlFor } from "../sanity";
+import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -30,7 +31,7 @@ const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
       <Head>
         <title>Viktor Sopko</title>
         <meta name="description" content="Viktor's Portfolio" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="My new title" key="title" />
         <meta property="og:image" content={urlFor(pageInfo.profilePic).url()} />
       </Head>
@@ -65,10 +66,12 @@ const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <img
+            <Image
               src={urlFor(pageInfo.profilePic).url()}
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0"
+              className="rounded-full filter grayscale hover:grayscale-0"
               alt=""
+              width={40}
+              height={40}
             />
           </div>
         </footer>

@@ -4,6 +4,7 @@ import BackgroundCircles from "./BackgroundCircles";
 import Link from "next/link";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
+import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -24,10 +25,13 @@ export default function Hero({ pageInfo }: Props) {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <img
+      <Image
         src={urlFor(pageInfo.heroImage).url()}
-        className="relative rounded-full mx-auto object-cover h-32 w-32"
+        className="relative rounded-full mx-auto"
         alt="profile image"
+        width={128}
+        height={128}
+        objectFit="cover"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
