@@ -22,8 +22,8 @@ export default function ContactMe({ pageInfo }: Props) {
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col space-y-4 md:space-y-10">
+        <h4 className="md:text-4xl text-xl font-semibold text-center">
           I've got just what you need.{" "}
           <span className="underline decoration-[#f7ab0a]/50">Let's Talk.</span>
         </h4>
@@ -40,7 +40,7 @@ export default function ContactMe({ pageInfo }: Props) {
           action={`https://formsubmit.co/${pageInfo.email}`}
           method="POST"
         >
-          <div className="flex space-x-2">
+          <div className="grid grid-cols-2 space-x-2">
             <input
               {...register("name")}
               name="name"

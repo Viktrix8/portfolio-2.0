@@ -8,7 +8,7 @@ type Props = {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 px-14 opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
       {experience.companyImage && (
         <motion.img
           initial={{ y: -100, opacity: 0 }}
@@ -23,22 +23,23 @@ export default function ExperienceCard({ experience }: Props) {
 
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">{experience.jobTitle}</h4>
-        <p className="font-bold text-2xl mt-1">{experience.companyName}</p>
+        <p className="font-extralight text-2xl mt-1">
+          {experience.companyName}
+        </p>
         <div className="flex space-x-2 my-2">
           {experience.technologies.map((technology) => (
             <img
               key={technology._id}
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded-full mt-4"
               src={urlFor(technology.image).url()}
               alt=""
             />
           ))}
         </div>
-        {experience.dateStarted && experience.dateEnded && (
-          <p className="uppercase py-5 text-gray-300">
-            Started work {experience.dateStarted} - Ended {experience.dateEnded}
-          </p>
-        )}
+        <p className="uppercase py-5 text-gray-300">
+          Started work: {experience.dateStarted} -{" "}
+          {experience.dateEnded ? "Ended " + experience.dateEnded : "Present"}
+        </p>
         <ul className="list-disc space-y-4 ml-5 text-lg">
           {experience.points.map((point) => (
             <li key={point}>{point}</li>
