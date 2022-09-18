@@ -31,6 +31,8 @@ const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
         <title>Viktor Sopko</title>
         <meta name="description" content="Viktor's Portfolio" />
         <link rel="icon" href="/favicon.png" />
+        <meta property="og:title" content="My new title" key="title" />
+        <meta property="og:image" content={urlFor(pageInfo.profilePic).url()} />
       </Head>
 
       <Header socials={socials} />
